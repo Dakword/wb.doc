@@ -1,7 +1,8 @@
 Определение адреса в зависимости от артикула
 
 ```js
-volHostV2(25696931);  // >> '//basket-02.wb.ru/vol256/part25696/25696931'
+volHostV2(25696931);        // >> '//basket-02.wb.ru/vol256/part25696/25696931'
+volFeedbackHost(25696931);  // >> '//feedback01.wb.ru/vol256/part25696/25696931'
 
 function volHostV2(nmId) {
     const nm = parseInt(nmId, 10),
@@ -22,6 +23,19 @@ function volHostV2(nmId) {
 		: vol >= 1602 && vol <= 1655 ? "//basket-11.wb.ru"
 		: "//basket-12.wb.ru";
 		
-	return `${host}/vol${vol}/part${part}/${nm}`;
+    return `${host}/vol${vol}/part${part}/${nm}`;
+}
+
+function volFeedbackHost(nmId) {
+    const nm = parseInt(nmId, 10),
+          vol = ~~(nm / 1e5),
+          part = ~~(nm / 1e3);
+    const host =
+		vol >= 0 && vol <= 431 ? "//feedback01.wb.ru" 
+		:vol >= 432 && vol <= 863 ? "//feedback02.wb.ru" 
+		: vol >= 864 && vol <= 1295 ? "//feedback03.wb.ru" 
+		: "//feedback04.wb.ru";
+		
+    return `${host}/vol${vol}/part${part}/${nm}`;
 }
 ```
