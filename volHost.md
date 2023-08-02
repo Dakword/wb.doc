@@ -21,7 +21,8 @@ function volHostV2(nmId) {
 		: vol >= 1170 && vol <= 1313 ? "//basket-09.wb.ru"
 		: vol >= 1314 && vol <= 1601 ? "//basket-10.wb.ru"
 		: vol >= 1602 && vol <= 1655 ? "//basket-11.wb.ru"
-		: "//basket-12.wb.ru";
+		: vol >= 1656 && vol <= 1919 ? "//basket-12.wb.ru"
+		: "//basket-13.wb.ru";
 		
     return `${host}/vol${vol}/part${part}/${nm}`;
 }
