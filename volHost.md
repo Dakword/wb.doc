@@ -22,7 +22,8 @@ function volHostV2(nmId) {
 		: vol >= 1314 && vol <= 1601 ? "//basket-10.wb.ru"
 		: vol >= 1602 && vol <= 1655 ? "//basket-11.wb.ru"
 		: vol >= 1656 && vol <= 1919 ? "//basket-12.wb.ru"
-		: "//basket-13.wb.ru";
+		: vol >= 1920 && vol <= 2045 ? "//basket-13.wb.ru"
+		: "//basket-14.wb.ru";
 		
     return `${host}/vol${vol}/part${part}/${nm}`;
 }
@@ -33,9 +34,10 @@ function volFeedbackHost(nmId) {
           part = ~~(nm / 1e3);
     const host =
 		vol >= 0 && vol <= 431 ? "//feedback01.wb.ru" 
-		:vol >= 432 && vol <= 863 ? "//feedback02.wb.ru" 
-		: vol >= 864 && vol <= 1295 ? "//feedback03.wb.ru" 
-		: "//feedback04.wb.ru";
+		: vol >= 432 && vol <= 863 ? "//feedback02.wb.ru" 
+		: vol >= 864 && vol <= 1119 ? "//feedback03.wb.ru" 
+		: vol >= 1200 && vol <= 1535 ? "//feedback04.wb.ru" 
+		: "//feedback05.wb.ru";
 		
     return `${host}/vol${vol}/part${part}/${nm}`;
 }
