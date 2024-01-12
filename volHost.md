@@ -11,7 +11,7 @@ function volHostV2(nmId) {
 	  
     const host =
 		vol >= 0 && vol <= 143 ? "//basket-01.wbbasket.ru" 
-		:vol >= 144 && vol <= 287 ? "//basket-02.wbbasket.ru" 
+		: vol >= 144 && vol <= 287 ? "//basket-02.wbbasket.ru" 
 		: vol >= 288 && vol <= 431 ? "//basket-03.wbbasket.ru" 
 		: vol >= 432 && vol <= 719 ? "//basket-04.wbbasket.ru" 
 		: vol >= 720 && vol <= 1007 ? "//basket-05.wbbasket.ru"
@@ -23,7 +23,8 @@ function volHostV2(nmId) {
 		: vol >= 1602 && vol <= 1655 ? "//basket-11.wbbasket.ru"
 		: vol >= 1656 && vol <= 1919 ? "//basket-12.wbbasket.ru"
 		: vol >= 1920 && vol <= 2045 ? "//basket-13.wbbasket.ru"
-		: "//basket-14.wbbasket.ru";
+		: vol >= 2046 && vol <= 2189 ? "//basket-14.wbbasket.ru"
+		: "//basket-15.wbbasket.ru";
 		
     return `${host}/vol${vol}/part${part}/${nm}`;
 }
